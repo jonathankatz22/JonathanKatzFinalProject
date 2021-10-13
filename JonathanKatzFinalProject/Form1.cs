@@ -95,7 +95,6 @@ namespace JonathanKatzFinalProject
             else
             {
                 Client client = FormToClient();
-                client.Insert();
                 if (client.ID == 0)
                 {
                         //הוספת לקוח חדש
@@ -109,7 +108,6 @@ namespace JonathanKatzFinalProject
                 }
                 else
                 {
-
                     //עדכון לקוח קיים
 
                     if (client.Update())
