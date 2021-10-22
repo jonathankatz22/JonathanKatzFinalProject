@@ -11,7 +11,7 @@ namespace JonathanKatzFinalProject.DAL
 {
     class Client_Dal
     {
-        public static bool Insert(string FirstName, string LastName, string PhoneNumber,string Email, int Tz, int ZipCode)
+        public static bool Insert(string FirstName, string LastName, string PhoneNumber,string Email, string Tz, string ZipCode)
         {
 
             //מוסיפה את הלקוח למסד הנתונים
@@ -45,7 +45,7 @@ namespace JonathanKatzFinalProject.DAL
             //בהמשך יהיו כאן הוראות נוספות הקשורות לקשרי גומלין...
 
         }
-        public static bool Update(int ID, string FirstName, string LastName, string PhoneNumber,string Email, int Tz, int zipCode)
+        public static bool Update(int ID, string FirstName, string LastName, string PhoneNumber,string Email, string Tz, string zipCode)
         {
 
             //מעדכנת את הלקוח במסד הנתונים
@@ -55,10 +55,21 @@ namespace JonathanKatzFinalProject.DAL
             + $",[LastName] = '{LastName}'"
             + $",[PhoneNumber] = '{PhoneNumber}'"
             + $",[Email] = '{Email}'"
-            + $",[Tz] = {Tz}"
-            + $",[ZipCode] = {zipCode}"
+            + $",[Tz] = '{Tz}'"
+            + $",[ZipCode] = '{zipCode}'"
             + $" WHERE ID = {ID}";
             //הפעלת פעולת הSQL -תוך שימוש בפעולה המוכנה ExecuteSql במחלקה Dal והחזרה האם הפעולה הצליחה
+            return Dal.ExecuteSql(str);
+        }
+        public static bool Delete(int id)
+        {
+
+            //מוחקת את הלקוח ממסד הנתונים
+
+            string str = $"DELETE FROM Table_Client WHERE ID = {id}";
+
+            //הפעלת פעולת הSQL -תוך שימוש בפעולה המוכנה ExecuteSql במחלקה Dal והחזרה האם הפעולה הצליחה
+
             return Dal.ExecuteSql(str);
         }
 

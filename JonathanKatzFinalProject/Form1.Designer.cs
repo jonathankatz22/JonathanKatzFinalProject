@@ -44,11 +44,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.button_Delete = new System.Windows.Forms.Button();
+            this.button_Clear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button_Save
             // 
-            this.button_Save.Location = new System.Drawing.Point(478, 379);
+            this.button_Save.Location = new System.Drawing.Point(384, 379);
             this.button_Save.Name = "button_Save";
             this.button_Save.Size = new System.Drawing.Size(92, 51);
             this.button_Save.TabIndex = 11;
@@ -185,11 +187,32 @@
             this.label7.TabIndex = 18;
             this.label7.Text = "Please enter your Zip Code:";
             // 
+            // button_Delete
+            // 
+            this.button_Delete.BackColor = System.Drawing.Color.Red;
+            this.button_Delete.Location = new System.Drawing.Point(604, 379);
+            this.button_Delete.Name = "button_Delete";
+            this.button_Delete.Size = new System.Drawing.Size(75, 51);
+            this.button_Delete.TabIndex = 20;
+            this.button_Delete.Text = "Delete";
+            this.button_Delete.UseVisualStyleBackColor = false;
+            // 
+            // button_Clear
+            // 
+            this.button_Clear.Location = new System.Drawing.Point(495, 379);
+            this.button_Clear.Name = "button_Clear";
+            this.button_Clear.Size = new System.Drawing.Size(75, 51);
+            this.button_Clear.TabIndex = 21;
+            this.button_Clear.Text = "Clear";
+            this.button_Clear.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(783, 434);
+            this.ClientSize = new System.Drawing.Size(783, 455);
+            this.Controls.Add(this.button_Clear);
+            this.Controls.Add(this.button_Delete);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -232,6 +255,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button_Delete;
+        private System.Windows.Forms.Button button_Clear;
     }
 }
 

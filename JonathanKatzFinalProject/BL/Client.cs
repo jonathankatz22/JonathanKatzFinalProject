@@ -16,8 +16,8 @@ namespace JonathanKatzFinalProject.BL
         private string m_LastName;
         private string m_PhoneNumber;
         private string m_Email;
-        private int m_Tz;
-        private int m_ZipCode;
+        private string m_Tz;
+        private string m_ZipCode;
 
 
 
@@ -26,8 +26,8 @@ namespace JonathanKatzFinalProject.BL
         public string LastName { get => m_LastName; set => m_LastName = value; }
         public string PhoneNumber { get => m_PhoneNumber; set => m_PhoneNumber = value; }
         public string Email { get => m_Email; set => m_Email = value; }
-        public int Tz { get => m_Tz; set => m_Tz = value; }
-        public int ZipCode { get => m_ZipCode; set => m_ZipCode = value; }
+        public string Tz { get => m_Tz; set => m_Tz = value; }
+        public string ZipCode { get => m_ZipCode; set => m_ZipCode = value; }
         
 
         public bool Insert()
@@ -46,14 +46,18 @@ namespace JonathanKatzFinalProject.BL
             m_LastName = dataRow["LastName"].ToString();
             m_PhoneNumber = dataRow["PhoneNumber"].ToString();
             m_Email = dataRow["Email"].ToString();
-            m_Tz = (int)dataRow["Tz"];
-            m_ZipCode = (int)dataRow["ZipCode"];
+            m_Tz = dataRow["Tz"].ToString();
+            m_ZipCode = dataRow["ZipCode"].ToString();
         }
-        public override string ToString()
+        public override string ToString()   
         { return $"{m_LastName} {m_FirstName}"; }
         public bool Update()
         {
             return Client_Dal.Update(m_ID, m_FirstName, m_LastName, m_PhoneNumber,m_Email, m_Tz, m_ZipCode);
+        }
+        public bool Delete()
+        {
+            return Client_Dal.Delete(m_ID);
         }
 
     }

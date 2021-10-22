@@ -31,5 +31,30 @@ namespace JonathanKatzFinalProject.BL
                 this.Add(curClient);
             }
         }
+        public ClientArr Filter(int ID, string LastName, string PhoneNumber)
+        {
+            ClientArr clientArr = new ClientArr();
+            Client client;
+            for (int i = 0; i < this.Count; i++)
+            {
+
+                //הצבת הלקוח הנוכחי במשתנה עזר - לקוח
+
+                client = (this[i] as Client);
+                if
+                (
+
+                // מזהה 0 – כלומר, לא נבחר מזהה בסינון
+
+                (ID == 0 || client.ID == ID)
+                && client.LastName.ToLower().StartsWith(LastName.ToLower())
+                && (client.PhoneNumber.Contains(PhoneNumber)))
+
+                    //הלקוח ענה לדרישות הסינון - הוספת הלקוח לאוסף הלקוחות המוחזר
+
+                    clientArr.Add(client);
+            }
+            return clientArr;
+        }
     }
 }

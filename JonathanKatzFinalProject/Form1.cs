@@ -125,10 +125,10 @@ namespace JonathanKatzFinalProject
             Client client = new Client();
             client.FirstName = textBox_FirstName.Text;
             client.LastName = textBox_LastName.Text;
-            client.Tz = int.Parse(textBox_Tz.Text);
-            client.ZipCode = int.Parse(textBox_ZipCode.Text);
-            client.PhoneNumber = (textBox_PhoneNumber.Text);
-            client.Email = (textBox_Email.Text);
+            client.Tz = textBox_Tz.Text;
+            client.ZipCode = textBox_ZipCode.Text;
+            client.PhoneNumber = textBox_PhoneNumber.Text;
+            client.Email = textBox_Email.Text;
             client.ID = int.Parse(label_ID.Text);
             return client;
         }
@@ -147,15 +147,26 @@ namespace JonathanKatzFinalProject
         }
         private void ClientToForm(Client client)
         {
-
-            label_ID.Text = client.ID.ToString();
-            textBox_FirstName.Text = client.FirstName;
-            textBox_LastName.Text = client.LastName;
-            textBox_Email.Text = client.Email;
-            textBox_PhoneNumber.Text = client.PhoneNumber;
-            textBox_Tz.Text = client.Tz.ToString();
-            textBox_ZipCode.Text = client.ZipCode.ToString();
-
+            if (client != null)
+            {
+                label_ID.Text = client.ID.ToString();
+                textBox_FirstName.Text = client.FirstName;
+                textBox_LastName.Text = client.LastName;
+                textBox_Email.Text = client.Email;
+                textBox_PhoneNumber.Text = client.PhoneNumber;
+                textBox_Tz.Text = client.Tz;
+                textBox_ZipCode.Text = client.ZipCode;
+            }
+            else
+            {
+                label_ID.Text = "0";
+                textBox_FirstName.Text = "";
+                textBox_LastName.Text = "";
+                textBox_Email.Text = "";
+                textBox_PhoneNumber.Text = "";
+                textBox_Tz.Text = "";
+                textBox_ZipCode.Text = "";
+            }
         }
 
         private void listBox_Clients_DoubleClick(object sender, EventArgs e)
@@ -177,5 +188,34 @@ namespace JonathanKatzFinalProject
         {
 
         }
+        private void button_Delete_Click(object sender, EventArgs e)
+        {
+            Client client = FormToClient();
+            if (client.ID == 0)
+                MessageBox.Show("You need to choose a client");
+            else
+            {
+
+                //בהמשך תהיה כאן בדיקה שאין מידע נוסף על לקוח זה
+                if (MessageBox.Show("Are you sure?", "warning", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2,
+                MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading) ==
+                System.Windows.Forms.DialogResult.Yes)
+                {
+                    if (client.Delete())
+                    {
+                        //הודעה
+                    }
+                    else
+                    {
+                        //הודעה
+                       
+                    }
+                    ClientToForm(null);
+                    ClientArrToForm();
+                }
+            }
+        }
     }
+
 }
