@@ -208,7 +208,7 @@ namespace JonathanKatzFinalProject
                     }
                     else
                     {
-                        MessageBox.Show("client not deleted");
+                        MessageBox.Show("eror");
                     }
                     ClientToForm(null);
                     ClientArrToForm();
