@@ -61,12 +61,12 @@ namespace JonathanKatzFinalProject.DAL
             //הפעלת פעולת הSQL -תוך שימוש בפעולה המוכנה ExecuteSql במחלקה Dal והחזרה האם הפעולה הצליחה
             return Dal.ExecuteSql(str);
         }
-        public static bool Delete(int id)
+        public static bool Delete(int ID)
         {
 
             //מוחקת את הלקוח ממסד הנתונים
 
-            string str = $"DELETE FROM Table_Client WHERE ID = {id}";
+            string str = $"DELETE FROM Table_Client WHERE ID = {ID}";
 
             //הפעלת פעולת הSQL -תוך שימוש בפעולה המוכנה ExecuteSql במחלקה Dal והחזרה האם הפעולה הצליחה
 

@@ -46,6 +46,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.button_Delete = new System.Windows.Forms.Button();
             this.button_Clear = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox_FilterPhoneNumber = new System.Windows.Forms.TextBox();
+            this.textBox_FilterLastName = new System.Windows.Forms.TextBox();
+            this.textBox_FilterID = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button_Save
@@ -102,9 +110,9 @@
             // 
             this.listBox_Clients.FormattingEnabled = true;
             this.listBox_Clients.ItemHeight = 20;
-            this.listBox_Clients.Location = new System.Drawing.Point(12, 6);
+            this.listBox_Clients.Location = new System.Drawing.Point(12, 206);
             this.listBox_Clients.Name = "listBox_Clients";
-            this.listBox_Clients.Size = new System.Drawing.Size(254, 424);
+            this.listBox_Clients.Size = new System.Drawing.Size(254, 224);
             this.listBox_Clients.TabIndex = 11;
             this.listBox_Clients.DoubleClick += new System.EventHandler(this.listBox_Clients_DoubleClick);
             // 
@@ -190,12 +198,13 @@
             // button_Delete
             // 
             this.button_Delete.BackColor = System.Drawing.Color.Red;
-            this.button_Delete.Location = new System.Drawing.Point(604, 379);
+            this.button_Delete.Location = new System.Drawing.Point(593, 379);
             this.button_Delete.Name = "button_Delete";
             this.button_Delete.Size = new System.Drawing.Size(75, 51);
             this.button_Delete.TabIndex = 20;
             this.button_Delete.Text = "Delete";
             this.button_Delete.UseVisualStyleBackColor = false;
+            this.button_Delete.Click += new System.EventHandler(this.button_Delete_Click);
             // 
             // button_Clear
             // 
@@ -205,12 +214,77 @@
             this.button_Clear.TabIndex = 21;
             this.button_Clear.Text = "Clear";
             this.button_Clear.UseVisualStyleBackColor = true;
+            this.button_Clear.Click += new System.EventHandler(this.button_Clear_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBox_FilterPhoneNumber);
+            this.groupBox1.Controls.Add(this.textBox_FilterLastName);
+            this.groupBox1.Controls.Add(this.textBox_FilterID);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(257, 177);
+            this.groupBox1.TabIndex = 22;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Filter";
+            // 
+            // textBox_FilterPhoneNumber
+            // 
+            this.textBox_FilterPhoneNumber.Location = new System.Drawing.Point(112, 124);
+            this.textBox_FilterPhoneNumber.Name = "textBox_FilterPhoneNumber";
+            this.textBox_FilterPhoneNumber.Size = new System.Drawing.Size(100, 26);
+            this.textBox_FilterPhoneNumber.TabIndex = 27;
+            // 
+            // textBox_FilterLastName
+            // 
+            this.textBox_FilterLastName.Location = new System.Drawing.Point(112, 81);
+            this.textBox_FilterLastName.Name = "textBox_FilterLastName";
+            this.textBox_FilterLastName.Size = new System.Drawing.Size(100, 26);
+            this.textBox_FilterLastName.TabIndex = 26;
+            // 
+            // textBox_FilterID
+            // 
+            this.textBox_FilterID.Location = new System.Drawing.Point(112, 37);
+            this.textBox_FilterID.Name = "textBox_FilterID";
+            this.textBox_FilterID.Size = new System.Drawing.Size(100, 26);
+            this.textBox_FilterID.TabIndex = 23;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(15, 127);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(68, 20);
+            this.label10.TabIndex = 25;
+            this.label10.Text = "Phone #";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(15, 84);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(90, 20);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Last Name:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(15, 40);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(30, 20);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "ID:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(783, 455);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button_Clear);
             this.Controls.Add(this.button_Delete);
             this.Controls.Add(this.label7);
@@ -232,6 +306,8 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,6 +333,13 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button_Delete;
         private System.Windows.Forms.Button button_Clear;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBox_FilterPhoneNumber;
+        private System.Windows.Forms.TextBox textBox_FilterLastName;
+        private System.Windows.Forms.TextBox textBox_FilterID;
     }
 }
 

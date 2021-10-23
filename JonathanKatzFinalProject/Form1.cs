@@ -204,18 +204,46 @@ namespace JonathanKatzFinalProject
                 {
                     if (client.Delete())
                     {
-                        //הודעה
+                        MessageBox.Show("client deleted");
                     }
                     else
                     {
-                        //הודעה
-                       
+                        MessageBox.Show("client not deleted");
                     }
                     ClientToForm(null);
                     ClientArrToForm();
                 }
             }
         }
+
+        private void button_Clear_Click(object sender, EventArgs e)
+        {
+            ClientToForm(null);
+        }
+        private void textBox_Filter_KeyUp(object sender, KeyEventArgs e)
+        {
+            int ID = 0;
+
+            //אם המשתמש רשם ערך בשדה המזהה
+
+            if (textBox_FilterID.Text != "")
+                ID = int.Parse(textBox_FilterID.Text);
+
+            //מייצרים אוסף של כלל הלקוחות
+
+            ClientArr clientArr = new ClientArr();
+            clientArr.Fill();
+
+            //מסננים את אוסף הלקוחות לפי שדות הסינון שרשם המשתמש
+
+            clientArr = clientArr.Filter(ID, textBox_FilterLastName.Text,
+            textBox_FilterPhoneNumber.Text);
+            //מציבים בתיבת הרשימה את אוסף הלקוחות
+
+            listBox_Clients.DataSource = clientArr;
+        }
+
+        
     }
 
 }
