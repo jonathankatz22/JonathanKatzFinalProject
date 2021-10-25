@@ -60,12 +60,13 @@
             // 
             // button_Save
             // 
+            this.button_Save.BackColor = System.Drawing.Color.LimeGreen;
             this.button_Save.Location = new System.Drawing.Point(384, 379);
             this.button_Save.Name = "button_Save";
             this.button_Save.Size = new System.Drawing.Size(92, 51);
             this.button_Save.TabIndex = 11;
             this.button_Save.Text = "Save";
-            this.button_Save.UseVisualStyleBackColor = true;
+            this.button_Save.UseVisualStyleBackColor = false;
             this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
             // 
             // textBox_PhoneNumber
@@ -202,9 +203,9 @@
             // button_Delete
             // 
             this.button_Delete.BackColor = System.Drawing.Color.Red;
-            this.button_Delete.Location = new System.Drawing.Point(593, 379);
+            this.button_Delete.Location = new System.Drawing.Point(576, 379);
             this.button_Delete.Name = "button_Delete";
-            this.button_Delete.Size = new System.Drawing.Size(75, 51);
+            this.button_Delete.Size = new System.Drawing.Size(92, 51);
             this.button_Delete.TabIndex = 20;
             this.button_Delete.Text = "Delete";
             this.button_Delete.UseVisualStyleBackColor = false;
@@ -213,9 +214,9 @@
             // button_Clear
             // 
             this.button_Clear.BackColor = System.Drawing.Color.Yellow;
-            this.button_Clear.Location = new System.Drawing.Point(495, 379);
+            this.button_Clear.Location = new System.Drawing.Point(482, 379);
             this.button_Clear.Name = "button_Clear";
-            this.button_Clear.Size = new System.Drawing.Size(75, 51);
+            this.button_Clear.Size = new System.Drawing.Size(88, 51);
             this.button_Clear.TabIndex = 21;
             this.button_Clear.Text = "Clear";
             this.button_Clear.UseVisualStyleBackColor = false;
