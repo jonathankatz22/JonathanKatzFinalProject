@@ -1,6 +1,6 @@
 ﻿namespace JonathanKatzFinalProject
 {
-    partial class Form1
+    partial class LogInJonathanKatz
     {
         /// <summary>
         /// Required designer variable.
@@ -105,6 +105,7 @@
             this.textBox_ZipCode.Name = "textBox_ZipCode";
             this.textBox_ZipCode.Size = new System.Drawing.Size(228, 26);
             this.textBox_ZipCode.TabIndex = 6;
+            this.textBox_ZipCode.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Number_KeyPress);
             // 
             // listBox_Clients
             // 
@@ -140,6 +141,7 @@
             this.textBox_Email.Name = "textBox_Email";
             this.textBox_Email.Size = new System.Drawing.Size(228, 26);
             this.textBox_Email.TabIndex = 4;
+            this.textBox_Email.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_NotHebrew_KeyPress);
             // 
             // label2
             // 
@@ -208,12 +210,13 @@
             // 
             // button_Clear
             // 
+            this.button_Clear.BackColor = System.Drawing.Color.Yellow;
             this.button_Clear.Location = new System.Drawing.Point(495, 379);
             this.button_Clear.Name = "button_Clear";
             this.button_Clear.Size = new System.Drawing.Size(75, 51);
             this.button_Clear.TabIndex = 21;
             this.button_Clear.Text = "Clear";
-            this.button_Clear.UseVisualStyleBackColor = true;
+            this.button_Clear.UseVisualStyleBackColor = false;
             this.button_Clear.Click += new System.EventHandler(this.button_Clear_Click);
             // 
             // groupBox1
@@ -237,6 +240,8 @@
             this.textBox_FilterPhoneNumber.Name = "textBox_FilterPhoneNumber";
             this.textBox_FilterPhoneNumber.Size = new System.Drawing.Size(100, 26);
             this.textBox_FilterPhoneNumber.TabIndex = 27;
+            this.textBox_FilterPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Number_KeyPress);
+            this.textBox_FilterPhoneNumber.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox_Filter_KeyUp);
             // 
             // textBox_FilterLastName
             // 
@@ -244,6 +249,8 @@
             this.textBox_FilterLastName.Name = "textBox_FilterLastName";
             this.textBox_FilterLastName.Size = new System.Drawing.Size(100, 26);
             this.textBox_FilterLastName.TabIndex = 26;
+            this.textBox_FilterLastName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Eng_KeyPress);
+            this.textBox_FilterLastName.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox_Filter_KeyUp);
             // 
             // textBox_FilterID
             // 
@@ -251,6 +258,8 @@
             this.textBox_FilterID.Name = "textBox_FilterID";
             this.textBox_FilterID.Size = new System.Drawing.Size(100, 26);
             this.textBox_FilterID.TabIndex = 23;
+            this.textBox_FilterID.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Number_KeyPress);
+            this.textBox_FilterID.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBox_Filter_KeyUp);
             // 
             // label10
             // 
@@ -279,10 +288,11 @@
             this.label8.TabIndex = 23;
             this.label8.Text = "ID:";
             // 
-            // Form1
+            // LogInJonathanKatz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(783, 455);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button_Clear);
@@ -303,8 +313,8 @@
             this.Controls.Add(this.textBox_FirstName);
             this.Controls.Add(this.textBox_PhoneNumber);
             this.Controls.Add(this.button_Save);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "LogInJonathanKatz";
+            this.Text = "JonathanKatzProject";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

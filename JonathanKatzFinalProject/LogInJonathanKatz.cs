@@ -12,12 +12,13 @@ using JonathanKatzFinalProject.DAL;
 
 namespace JonathanKatzFinalProject
 {
-    public partial class Form1 : Form
+    public partial class LogInJonathanKatz : Form
     {
-        public Form1()
+        public LogInJonathanKatz()
         {
             InitializeComponent();
             ClientArrToForm();
+            CapsLockCheck();
         }
         private void textBox_Number_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -26,13 +27,18 @@ namespace JonathanKatzFinalProject
         }
         private bool IsEngLetter(char c)
         {
-            if (c >= 'A' && c <= 'Z' || c >= 'a' && c <= 'z')
+            if (c >= 'A' && c <= 'Z' || c >= 'a' && c <= 'z' )
                 return true;
             return false;
         }
         private void textBox_Eng_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!IsEngLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+                e.KeyChar = char.MinValue;
+        }
+        private void textBox_NotHebrew_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!IsEngLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ' && !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
                 e.KeyChar = char.MinValue;
         }
         private bool CheckForm()
@@ -58,7 +64,7 @@ namespace JonathanKatzFinalProject
             else
                 textBox_LastName.BackColor = Color.White;
 
-            if (textBox_ZipCode.Text.Length < 5)
+            if (textBox_ZipCode.Text.Length <= 5)
             {
                 flag = false;
                 textBox_ZipCode.BackColor = Color.Red;
@@ -81,6 +87,14 @@ namespace JonathanKatzFinalProject
             }
             else
                 textBox_Tz.BackColor = Color.White;
+
+            if (!textBox_Email.Text.Contains("@"))
+            {
+                flag = false;
+                textBox_Email.ForeColor = Color.Red;
+            }
+            else
+                textBox_Email.BackColor = Color.White;
 
             return flag;
         }
@@ -242,8 +256,17 @@ namespace JonathanKatzFinalProject
 
             listBox_Clients.DataSource = clientArr;
         }
+        private void CapsLockCheck()
+        {
+            if (Control.IsKeyLocked(Keys.CapsLock))
 
-        
+            {
+                MessageBox.Show("Caps lock are on");
+            }
+
+
+        }
+
     }
 
 }
