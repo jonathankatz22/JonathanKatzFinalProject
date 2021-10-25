@@ -53,7 +53,9 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button_Save
@@ -288,12 +290,23 @@
             this.label8.TabIndex = 23;
             this.label8.Text = "ID:";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::JonathanKatzFinalProject.Properties.Resources.יונתן_כץ;
+            this.pictureBox1.Location = new System.Drawing.Point(793, 47);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(309, 383);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
+            // 
             // LogInJonathanKatz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(783, 455);
+            this.ClientSize = new System.Drawing.Size(1114, 453);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button_Clear);
             this.Controls.Add(this.button_Delete);
@@ -318,6 +331,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -350,6 +364,7 @@
         private System.Windows.Forms.TextBox textBox_FilterPhoneNumber;
         private System.Windows.Forms.TextBox textBox_FilterLastName;
         private System.Windows.Forms.TextBox textBox_FilterID;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
