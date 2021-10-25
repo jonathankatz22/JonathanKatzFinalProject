@@ -38,7 +38,7 @@ namespace JonathanKatzFinalProject
         }
         private void textBox_NotHebrew_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!IsEngLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ' && !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            if (!IsEngLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ' && !char.IsDigit(e.KeyChar) && e.KeyChar !='.' && e.KeyChar != '@')
                 e.KeyChar = char.MinValue;
         }
         private bool CheckForm()
