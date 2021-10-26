@@ -50,7 +50,9 @@ namespace JonathanKatzFinalProject.BL
             m_ZipCode = dataRow["ZipCode"].ToString();
         }
         public override string ToString()   
-        { return $"{m_LastName} {m_FirstName}"; }
+        { 
+            return $"{m_LastName} {m_FirstName}"; 
+        }
         public bool Update()
         {
             return Client_Dal.Update(m_ID, m_FirstName, m_LastName, m_PhoneNumber,m_Email, m_Tz, m_ZipCode);

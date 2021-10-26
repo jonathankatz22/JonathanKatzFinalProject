@@ -16,7 +16,7 @@ namespace JonathanKatzFinalProject
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LogInJonathanKatz());
+            Application.Run(new Form_Client());
         }
     }
 }

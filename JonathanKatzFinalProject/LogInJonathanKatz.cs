@@ -12,9 +12,9 @@ using JonathanKatzFinalProject.DAL;
 
 namespace JonathanKatzFinalProject
 {
-    public partial class LogInJonathanKatz : Form
+    public partial class Form_Client : Form
     {
-        public LogInJonathanKatz()
+        public Form_Client()
         {
             InitializeComponent();
             ClientArrToForm();
@@ -108,7 +108,7 @@ namespace JonathanKatzFinalProject
             }
             else
             {
-                Client client = FormToClient();
+                BL.Client client = FormToClient();
                 if (client.ID == 0)
                 {
                         //הוספת לקוח חדש
@@ -134,9 +134,9 @@ namespace JonathanKatzFinalProject
                 }
             }
         }
-        private Client FormToClient()
+        private BL.Client FormToClient()
         {
-            Client client = new Client();
+            BL.Client client = new BL.Client();
             client.FirstName = textBox_FirstName.Text;
             client.LastName = textBox_LastName.Text;
             client.Tz = textBox_Tz.Text;
@@ -159,7 +159,7 @@ namespace JonathanKatzFinalProject
             clientArr.Fill();
             listBox_Clients.DataSource = clientArr;
         }
-        private void ClientToForm(Client client)
+        private void ClientToForm(BL.Client client)
         {
             if (client != null)
             {
@@ -185,7 +185,7 @@ namespace JonathanKatzFinalProject
 
         private void listBox_Clients_DoubleClick(object sender, EventArgs e)
         {
-            ClientToForm(listBox_Clients.SelectedItem as Client);
+            ClientToForm(listBox_Clients.SelectedItem as BL.Client);
         }
 
         private void textBox8_TextChanged(object sender, EventArgs e)
@@ -204,7 +204,7 @@ namespace JonathanKatzFinalProject
         }
         private void button_Delete_Click(object sender, EventArgs e)
         {
-            Client client = FormToClient();
+            BL.Client client = FormToClient();
             if (client.ID == 0)
                 MessageBox.Show("You need to choose a client");
             else

@@ -1,6 +1,6 @@
 ﻿namespace JonathanKatzFinalProject
 {
-    partial class LogInJonathanKatz
+    partial class Form_Client
     {
         /// <summary>
         /// Required designer variable.
@@ -301,12 +301,12 @@
             this.pictureBox1.TabIndex = 23;
             this.pictureBox1.TabStop = false;
             // 
-            // LogInJonathanKatz
+            // Form_Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.ClientSize = new System.Drawing.Size(1114, 453);
+            this.ClientSize = new System.Drawing.Size(1161, 476);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button_Clear);
@@ -327,7 +327,7 @@
             this.Controls.Add(this.textBox_FirstName);
             this.Controls.Add(this.textBox_PhoneNumber);
             this.Controls.Add(this.button_Save);
-            this.Name = "LogInJonathanKatz";
+            this.Name = "Form_Client";
             this.Text = "JonathanKatzProject";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
