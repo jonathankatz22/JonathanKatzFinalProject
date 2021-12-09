@@ -54,6 +54,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.comboBox_Citys = new System.Windows.Forms.ComboBox();
+            this.button_City = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -61,7 +64,7 @@
             // button_Save
             // 
             this.button_Save.BackColor = System.Drawing.Color.LimeGreen;
-            this.button_Save.Location = new System.Drawing.Point(384, 379);
+            this.button_Save.Location = new System.Drawing.Point(393, 413);
             this.button_Save.Name = "button_Save";
             this.button_Save.Size = new System.Drawing.Size(92, 51);
             this.button_Save.TabIndex = 11;
@@ -203,7 +206,7 @@
             // button_Delete
             // 
             this.button_Delete.BackColor = System.Drawing.Color.Red;
-            this.button_Delete.Location = new System.Drawing.Point(576, 379);
+            this.button_Delete.Location = new System.Drawing.Point(585, 413);
             this.button_Delete.Name = "button_Delete";
             this.button_Delete.Size = new System.Drawing.Size(92, 51);
             this.button_Delete.TabIndex = 20;
@@ -214,7 +217,7 @@
             // button_Clear
             // 
             this.button_Clear.BackColor = System.Drawing.Color.Yellow;
-            this.button_Clear.Location = new System.Drawing.Point(482, 379);
+            this.button_Clear.Location = new System.Drawing.Point(491, 413);
             this.button_Clear.Name = "button_Clear";
             this.button_Clear.Size = new System.Drawing.Size(88, 51);
             this.button_Clear.TabIndex = 21;
@@ -301,12 +304,42 @@
             this.pictureBox1.TabIndex = 23;
             this.pictureBox1.TabStop = false;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(304, 359);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(181, 20);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "Please choose your City:";
+            // 
+            // comboBox_Citys
+            // 
+            this.comboBox_Citys.FormattingEnabled = true;
+            this.comboBox_Citys.Location = new System.Drawing.Point(543, 356);
+            this.comboBox_Citys.Name = "comboBox_Citys";
+            this.comboBox_Citys.Size = new System.Drawing.Size(159, 28);
+            this.comboBox_Citys.TabIndex = 25;
+            // 
+            // button_City
+            // 
+            this.button_City.Location = new System.Drawing.Point(720, 356);
+            this.button_City.Name = "button_City";
+            this.button_City.Size = new System.Drawing.Size(51, 31);
+            this.button_City.TabIndex = 26;
+            this.button_City.Text = "+";
+            this.button_City.UseVisualStyleBackColor = true;
+            this.button_City.Click += new System.EventHandler(this.AddCityButton_Click);
+            // 
             // Form_Client
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.ClientSize = new System.Drawing.Size(1161, 476);
+            this.Controls.Add(this.button_City);
+            this.Controls.Add(this.comboBox_Citys);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button_Clear);
@@ -366,6 +399,9 @@
         private System.Windows.Forms.TextBox textBox_FilterLastName;
         private System.Windows.Forms.TextBox textBox_FilterID;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox comboBox_Citys;
+        private System.Windows.Forms.Button button_City;
     }
 }
 

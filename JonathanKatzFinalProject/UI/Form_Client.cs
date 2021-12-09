@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using JonathanKatzFinalProject.BL;
 using JonathanKatzFinalProject.DAL;
+using JonathanKatzFinalProject.UI;
 
 namespace JonathanKatzFinalProject
 {
@@ -18,7 +19,9 @@ namespace JonathanKatzFinalProject
         {
             InitializeComponent();
             ClientArrToForm();
+            CityArrToForm();
             CapsLockCheck();
+
         }
         private void textBox_Number_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -96,6 +99,13 @@ namespace JonathanKatzFinalProject
             else
                 textBox_Email.BackColor = Color.White;
 
+            if (comboBox_Citys.SelectedItem == null)
+            {
+                flag = false;
+                comboBox_Citys.ForeColor = Color.Red;
+            }
+            else
+                comboBox_Citys.BackColor = Color.White;
             return flag;
         }
         private void button_Save_Click(object sender, EventArgs e)
@@ -144,6 +154,7 @@ namespace JonathanKatzFinalProject
             client.PhoneNumber = textBox_PhoneNumber.Text;
             client.Email = textBox_Email.Text;
             client.ID = int.Parse(label_ID.Text);
+            client.City = comboBox_Citys.SelectedItem as City;
             return client;
         }
 
@@ -170,6 +181,7 @@ namespace JonathanKatzFinalProject
                 textBox_PhoneNumber.Text = client.PhoneNumber;
                 textBox_Tz.Text = client.Tz;
                 textBox_ZipCode.Text = client.ZipCode;
+                comboBox_Citys.SelectedValue = client.City.ID;
             }
             else
             {
@@ -180,7 +192,31 @@ namespace JonathanKatzFinalProject
                 textBox_PhoneNumber.Text = "";
                 textBox_Tz.Text = "";
                 textBox_ZipCode.Text = "";
+                comboBox_Citys.SelectedItem = null;
             }
+        }
+        public void CityArrToForm(City curCity = null)
+        {
+
+            //ממירה את הטנ "מ אוסף ישובים לטופס
+            
+            CityArr cityArr = new CityArr();
+            //הוספת ישוב ברירת מחדל - בחר ישוב
+            //יצירת מופע חדש של ישוב עם מזהה מינוס 1 ושם מתאים
+
+            City cityDefault = new City();
+            cityDefault.ID = -1;
+            cityDefault.Name = "בחר ישוב";
+            //הוספת הישוב לאוסף הישובים - אותו נציב במקור הנתונים של תיבת הבחירה
+            cityArr.Add(cityDefault);
+
+            cityArr.Fill();
+
+            comboBox_Citys.DataSource = cityArr;
+            comboBox_Citys.ValueMember = "Id";
+            comboBox_Citys.DisplayMember = "Name";
+            if (curCity != null)
+                comboBox_Citys.SelectedValue = curCity.ID;
         }
 
         private void listBox_Clients_DoubleClick(object sender, EventArgs e)
@@ -267,6 +303,13 @@ namespace JonathanKatzFinalProject
 
         }
 
+        private void AddCityButton_Click(object sender, EventArgs e)
+        {
+            Form_City form_City = new Form_City(comboBox_Citys.SelectedItem as City);
+            form_City.ShowDialog();
+            CityArrToForm(form_City.SelectedCity);
+           
+        }
     }
 
 }

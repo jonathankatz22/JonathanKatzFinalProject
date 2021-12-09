@@ -56,5 +56,16 @@ namespace JonathanKatzFinalProject.BL
             }
             return clientArr;
         }
+        public bool DoesExist(City curCity)
+        {
+
+            //מחזירה האם לפחות לאחד מהלקוחות יש את היישוב
+
+            for (int i = 0; i < this.Count; i++)
+                if ((this[i] as Client).City.ID == curCity.ID)
+                    return true;
+
+            return false;
+        }
     }
 }

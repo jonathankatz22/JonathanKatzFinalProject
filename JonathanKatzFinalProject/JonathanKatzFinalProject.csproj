@@ -61,20 +61,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BL\City.cs" />
     <Compile Include="BL\Client.cs" />
+    <Compile Include="BL\CityArr.cs" />
     <Compile Include="BL\ClientArr.cs" />
+    <Compile Include="Dal\City_Dal.cs" />
     <Compile Include="Dal\Client_Dal.cs" />
     <Compile Include="Dal\Dal.cs" />
-    <Compile Include="LogInJonathanKatz.cs">
+    <Compile Include="UI\Form_City.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LogInJonathanKatz.Designer.cs">
-      <DependentUpon>LogInJonathanKatz.cs</DependentUpon>
+    <Compile Include="UI\Form_City.Designer.cs">
+      <DependentUpon>Form_City.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Form_Client.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Form_Client.Designer.cs">
+      <DependentUpon>Form_Client.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="LogInJonathanKatz.resx">
-      <DependentUpon>LogInJonathanKatz.cs</DependentUpon>
+    <EmbeddedResource Include="UI\Form_City.resx">
+      <DependentUpon>Form_City.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Form_Client.resx">
+      <DependentUpon>Form_Client.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -18,6 +18,8 @@ namespace JonathanKatzFinalProject.BL
         private string m_Email;
         private string m_Tz;
         private string m_ZipCode;
+        private City m_City; 
+
 
 
 
@@ -28,17 +30,20 @@ namespace JonathanKatzFinalProject.BL
         public string Email { get => m_Email; set => m_Email = value; }
         public string Tz { get => m_Tz; set => m_Tz = value; }
         public string ZipCode { get => m_ZipCode; set => m_ZipCode = value; }
+        public City City { get => m_City; set => m_City = value; }
+
         
 
         public bool Insert()
         {
-            return Client_Dal.Insert(m_FirstName, m_LastName, m_PhoneNumber,m_Email, m_Tz, m_ZipCode);
+            return Client_Dal.Insert(m_FirstName, m_LastName, m_PhoneNumber,m_Email, m_Tz, m_ZipCode, m_City.ID);
         }
 
         public Client() { }
         public Client(DataRow dataRow)
         {
             this.m_ID = (int)dataRow["ID"];
+            m_City = new City(dataRow.GetParentRow("ClientCity"));
 
             //מייצרת לקוח מתוך שורת לקוח
 
@@ -55,7 +60,7 @@ namespace JonathanKatzFinalProject.BL
         }
         public bool Update()
         {
-            return Client_Dal.Update(m_ID, m_FirstName, m_LastName, m_PhoneNumber,m_Email, m_Tz, m_ZipCode);
+            return Client_Dal.Update(m_ID, m_FirstName, m_LastName, m_PhoneNumber,m_Email, m_Tz, m_ZipCode,m_City.ID);
         }
         public bool Delete()
         {

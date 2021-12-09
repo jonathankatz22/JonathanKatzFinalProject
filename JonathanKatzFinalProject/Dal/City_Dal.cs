@@ -9,21 +9,21 @@ using System.Data;
 
 namespace JonathanKatzFinalProject.DAL
 {
-    class Client_Dal
+    class City_Dal
     {
-        public static bool Insert(string FirstName, string LastName, string PhoneNumber,string Email, string Tz, string ZipCode, int City)
+        public static bool Insert(string Name)
         {
 
             //מוסיפה את הלקוח למסד הנתונים
             //בניית הוראת ה-SQL
 
-            string str = "INSERT INTO Table_Client"
+            string str = "INSERT INTO Table_City"
             + "("
-            + "[FirstName],[LastName],[PhoneNumber],[Email],[Tz],[ZipCode],[City]"
+            + "[Name]"
             + ")"
             + " VALUES "
             + "("
-            + $"'{FirstName}','{LastName}','{PhoneNumber}','{Email}','{Tz}','{ZipCode}',{City}"
+            + $"'{Name}'"
             + ")";
             //הפעלת פעולת הSQL -תוך שימוש בפעולה המוכנה ExecuteSql במחלקה Dal והחזרה האם הפעולה הצליחה
             return Dal.ExecuteSql(str);
@@ -34,47 +34,34 @@ namespace JonathanKatzFinalProject.DAL
             DataTable dataTable = null;
             DataSet dataSet = new DataSet();
             FillDataSet(dataSet);
-            dataTable = dataSet.Tables["Table_Client"];
+            dataTable = dataSet.Tables["Table_City"];
             return dataTable;
         }
         public static void FillDataSet(DataSet dataSet)
         {
 
             //ממלאת את אוסף הטבלאות בטבלת הלקוחות
-            Dal.FillDataSet(dataSet, "Table_Client", "[LastName],[FirstName]");
+            Dal.FillDataSet(dataSet, "Table_City", "[Name]");
             //בהמשך יהיו כאן הוראות נוספות הקשורות לקשרי גומלין...
-            DataRelation dataRelation = null;
-            City_Dal.FillDataSet(dataSet);
-            dataRelation = new DataRelation(
-                "ClientCity" ,
-                dataSet.Tables["Table_City"].Columns["Id"],
-                dataSet.Tables["Table_Client"].Columns["City"]);
 
-            dataSet.Relations.Add(dataRelation);
         }
-        public static bool Update(int ID, string FirstName, string LastName, string PhoneNumber,string Email, string Tz, string zipCode, int City)
+        public static bool Update(int ID, string Name)
         {
 
             //מעדכנת את הלקוח במסד הנתונים
 
-            string str = "UPDATE Table_Client SET"
-            + $" [FirstName] = '{FirstName}'"
-            + $",[LastName] = '{LastName}'"
-            + $",[PhoneNumber] = '{PhoneNumber}'"
-            + $",[Email] = '{Email}'"
-            + $",[Tz] = '{Tz}'"
-            + $",[ZipCode] = '{zipCode}'"
-            + $" WHERE City = {City}"
+            string str = "UPDATE Table_City SET"
+            + $" [Name] = '{Name}'"
             + $" WHERE ID = {ID}";
             //הפעלת פעולת הSQL -תוך שימוש בפעולה המוכנה ExecuteSql במחלקה Dal והחזרה האם הפעולה הצליחה
             return Dal.ExecuteSql(str);
         }
-        public static bool Delete(int ID)
+        public static bool Delete(int id)
         {
 
-            //מוחקת את הלקוח ממסד הנתונים
+            //מוחקת את הישוב ממסד הנתונים
 
-            string str = $"DELETE FROM Table_Client WHERE ID = {ID}";
+            string str = "DELETE FROM Table_City WHERE ID = " + id;
 
             //הפעלת פעולת הSQL -תוך שימוש בפעולה המוכנה ExecuteSql במחלקה Dal והחזרה האם הפעולה הצליחה
 
