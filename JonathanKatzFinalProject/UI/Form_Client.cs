@@ -99,13 +99,13 @@ namespace JonathanKatzFinalProject
             else
                 textBox_Email.BackColor = Color.White;
 
-            if (comboBox_Citys.SelectedItem == null)
+            if ((int)comboBox_Citys.SelectedValue < 0)
             {
                 flag = false;
                 comboBox_Citys.ForeColor = Color.Red;
             }
             else
-                comboBox_Citys.BackColor = Color.White;
+                comboBox_Citys.ForeColor = Color.White;
             return flag;
         }
         private void button_Save_Click(object sender, EventArgs e)

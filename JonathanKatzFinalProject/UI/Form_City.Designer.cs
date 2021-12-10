@@ -51,7 +51,8 @@
             // 
             this.textBox1.Location = new System.Drawing.Point(376, 130);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(203, 26);
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(214, 26);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "Please enter your city name:";
             // 
@@ -70,6 +71,7 @@
             this.textBox_CityName.Name = "textBox_CityName";
             this.textBox_CityName.Size = new System.Drawing.Size(135, 26);
             this.textBox_CityName.TabIndex = 3;
+            this.textBox_CityName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_Eng_KeyPress);
             // 
             // button_Clear
             // 

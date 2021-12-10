@@ -108,6 +108,7 @@ namespace JonathanKatzFinalProject.UI
 
             //ממירה את הטנ "מ אוסף לקוחות לטופס
             CityArr cityArr = new CityArr();
+
             cityArr.Fill();
             listBox_Citys.DataSource = cityArr;
             listBox_Citys.ValueMember = "Id";
